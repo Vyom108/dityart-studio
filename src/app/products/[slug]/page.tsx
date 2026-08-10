@@ -1,0 +1,23 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Check, MessageCircle, Sparkles } from "lucide-react";
+import { getProduct, products, PRODUCT_CATEGORY_LABELS } from "@/data/products";
+
+export function generateStaticParams() { return products.map((product) => ({ slug: product.slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const product = getProduct(slug); return product ? { title: product.name, description: product.shortDescription } : {}; }
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const product = getProduct(slug); if (!product) notFound();
+  const whatsapp = `https://wa.me/919081913600?text=${encodeURIComponent(`Hi DityArt Studio! I would like to order ${product.name}.`)}`;
+  const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  return <main className="bg-[#fffdf7] pb-28 pt-28"><div className="mx-auto max-w-7xl px-5 lg:px-8"><Link href="/products" className="inline-flex items-center gap-2 text-sm font-bold text-[#1f1f1f]/70 hover:text-[#b67500]"><ArrowLeft size={16} /> All creations</Link>
+    <section className="mt-8 grid items-center gap-10 lg:grid-cols-2 lg:gap-16"><div className="relative overflow-hidden rounded-[2rem] border-[7px] border-white bg-[#fff3d6] p-2 shadow-[0_24px_55px_rgba(75,50,6,0.14)]"><div className="relative aspect-[4/3] overflow-hidden rounded-[1.35rem]"><Image src={`/images/products/${product.image}`} alt={product.name} fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" /></div></div><div><p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#b67500]"><Sparkles size={14} fill="currentColor" /> {PRODUCT_CATEGORY_LABELS[product.category]}</p><h1 className="mt-4 font-display text-5xl font-black tracking-[-0.055em] text-[#1f1f1f] sm:text-6xl">{product.name}</h1><p className="mt-5 text-lg leading-8 text-[#1f1f1f]/70">{product.description}</p><a href={whatsapp} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1f1f1f] px-7 py-4 text-sm font-bold text-white shadow-[0_12px_25px_rgba(31,31,31,0.16)]"><MessageCircle size={18} className="text-[#25D366]" /> Ask on WhatsApp</a></div></section>
+    <section className="mt-20 grid gap-6 lg:grid-cols-2"><InfoCard title="Made for" items={product.perfectFor} /><InfoCard title="Thoughtful details" items={product.features} /></section>
+    <section className="mt-20 rounded-[2rem] bg-[#fff3d6] p-7 sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b67500]">How it works</p><div className="mt-6 grid gap-6 sm:grid-cols-3">{[["01","Share your idea"],["02","We shape the details"],["03","You receive something personal"]].map(([number,copy]) => <div key={number}><p className="font-display text-4xl font-black text-[#ffb300]">{number}</p><p className="mt-2 font-display text-xl font-bold text-[#1f1f1f]">{copy}</p></div>)}</div></section>
+    <section className="mt-20"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b67500]">You may also love</p><div className="mt-6 grid gap-5 sm:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className="group rounded-[1.5rem] border border-[#efdfc3] bg-white p-2 shadow-[0_10px_25px_rgba(96,66,16,0.07)]"><div className="relative aspect-[4/3] overflow-hidden rounded-[1rem]"><Image src={`/images/products/${item.image}`} alt={item.name} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover transition group-hover:scale-105" /></div><p className="p-3 font-display text-lg font-bold text-[#1f1f1f]">{item.name}</p></Link>)}</div></section>
+  </div><a href={whatsapp} target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-[#102b18] shadow-[0_14px_30px_rgba(37,211,102,0.28)]"><MessageCircle size={18} /> Order on WhatsApp</a></main>;
+}
+
+function InfoCard({ title, items }: { title: string; items: string[] }) { return <div className="rounded-[1.7rem] border border-[#efdfc3] bg-white p-7"><h2 className="font-display text-3xl font-bold text-[#1f1f1f]">{title}</h2><ul className="mt-5 space-y-3 text-sm text-[#1f1f1f]/70">{items.map((item) => <li key={item} className="flex gap-2"><Check size={17} className="mt-0.5 shrink-0 text-[#e99500]" />{item}</li>)}</ul></div>; }
