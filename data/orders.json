@@ -1,6 +1,24 @@
 [
   {
     "category": "Personalized Gifts",
+    "product": "Fridge Magnets",
+    "name": "Vyom Sejpal",
+    "phone": "9825244345",
+    "email": "vyomsejpal6@gmail.com",
+    "city": "rajkot",
+    "recipient": "",
+    "occasion": "",
+    "quote": "",
+    "colours": "",
+    "date": "",
+    "budget": "",
+    "notes": "",
+    "id": "bd77232a-ab83-406a-a05c-0c1d898a7e2c",
+    "createdAt": "2026-08-13T12:00:06.539Z",
+    "status": "New"
+  },
+  {
+    "category": "Personalized Gifts",
     "product": "Polaroid Photos",
     "name": "Vyom Sejpal",
     "phone": "9825244345",

@@ -13,10 +13,6 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/#products",
   },
   {
-    label: "Gallery",
-    href: "/#gallery",
-  },
-  {
     label: "About",
     href: "/#story",
   },
@@ -25,3 +21,4 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/#contact",
   },
 ];
+

@@ -1,4 +1,4 @@
-﻿import type { Product, ProductCategory } from "@/types/product";
+import type { Product, ProductCategory } from "@/types/product";
 
 export const PRODUCT_CATEGORY_LABELS: Record<ProductCategory, string> = {
   "personalized-gifts": "Personalized Gifts",
@@ -11,7 +11,6 @@ const product = (slug: string, name: string, category: ProductCategory, image: s
   description: `${shortDescription} Every DityArt piece is tailored around your colours, words, photos, and the little details that make it feel genuinely yours.`,
   features,
   perfectFor,
-  gallery: [image],
 });
 
 export const products: Product[] = [
@@ -41,5 +40,6 @@ export const products: Product[] = [
 export function getProduct(slug: string) {
   return products.find((item) => item.slug === slug);
 }
+
 
 

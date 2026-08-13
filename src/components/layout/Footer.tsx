@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Heart, MessageCircle } from "lucide-react";
 
 import SectionSparkles from "@/components/decor/SectionSparkles";
@@ -93,7 +93,7 @@ export default function Footer() {
             Studio
           </p>
           <ul className="mt-5 space-y-3 text-sm text-[#1f1f1f]/80">
-            <li><Link href="/#category-atlas" className="transition hover:text-[#e98d00]">Explore the studio</Link></li>
+            <li><Link href="/#products" className="transition hover:text-[#e98d00]">Explore products</Link></li>
             <li><Link href="/products" className="transition hover:text-[#e98d00]">All creations</Link></li>
             <li><Link href="/custom-order" className="transition hover:text-[#e98d00]">Start a custom order</Link></li>
             <li><Link href="/#contact" className="transition hover:text-[#e98d00]">Say hello</Link></li>
@@ -153,6 +153,7 @@ export default function Footer() {
     </footer>
   );
 }
+
 
 
 

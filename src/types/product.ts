@@ -9,5 +9,5 @@ export type Product = {
   description: string;
   features: string[];
   perfectFor: string[];
-  gallery: string[];
 };
+
