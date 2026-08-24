@@ -13,11 +13,11 @@ export default function Button({
 }: ButtonProps) {
   const variants = {
     primary:
-      "bg-[#FFC107] text-gray-900 hover:bg-[#FFB300] shadow-lg hover:shadow-xl",
+      "bg-[#1f1f1f] text-white hover:bg-[#363636] shadow-[0_12px_25px_rgba(31,31,31,0.16)] hover:shadow-[0_18px_35px_rgba(31,31,31,0.22)]",
     secondary:
-      "bg-white text-gray-900 hover:bg-gray-100 shadow-md",
+      "bg-white text-[#1f1f1f] border border-[#d7b46c] hover:bg-[#fff8e9]",
     outline:
-      "border border-[#FFC107] text-[#FF8A00] hover:bg-[#FFF8E1]",
+      "border border-[#ffb300] text-[#a46c00] hover:bg-[#fff3d6]",
   };
 
   return (

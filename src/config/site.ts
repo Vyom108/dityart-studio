@@ -16,7 +16,7 @@ export const site = {
   contact: {
     email: "hello@dityartstudio.com",
     whatsapp: "919081913600",
-    instagram: "https://instagram.com/dityartstudio",
+    instagram: "https://instagram.com/dityart_studio",
     facebook: "https://facebook.com/dityartstudio",
   },
   hours: {

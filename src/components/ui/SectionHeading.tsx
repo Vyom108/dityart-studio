@@ -29,17 +29,17 @@ export default function SectionHeading({
       )}
     >
       {badge && (
-        <span className="inline-flex rounded-full bg-yellow-100 px-4 py-1 text-sm font-semibold text-yellow-700">
+        <span className="inline-flex rounded-full bg-[#fff3d6] px-4 py-1 text-sm font-bold uppercase tracking-[0.14em] text-[#a46c00]">
           {badge}
         </span>
       )}
 
-      <h2 className="mt-4 text-4xl font-bold text-gray-900 md:text-5xl">
+      <h2 className="mt-4 font-display text-4xl font-black tracking-[-0.05em] text-[#1f1f1f] sm:text-5xl">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mt-5 text-lg leading-8 text-gray-600">
+        <p className="mt-5 text-base leading-7 text-[#1f1f1f]/65 sm:text-lg sm:leading-8">
           {subtitle}
         </p>
       )}

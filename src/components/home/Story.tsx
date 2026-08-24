@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -24,39 +24,10 @@ const STATS: Stat[] = [
   { value: "5★", label: "average client joy", accent: "#ffb300" },
 ];
 
-type Photo = {
-  src: string;
-  alt: string;
-  caption: string;
-  className: string;
-  rotate: number;
-  priority?: boolean;
+const STORY_IMAGE = {
+  src: "/images/hero/girl-story.png",
+  alt: "DityArt Studio creative process",
 };
-
-const PHOTOS: Photo[] = [
-  {
-    src: "/images/products/Website Products_20260705_210559_0008.png",
-    alt: "DityArt Studio handcrafted creation on the workbench",
-    caption: "Made by hand",
-    className: "left-[2%] top-[6%] z-20 w-[44%] sm:w-[40%]",
-    rotate: -7,
-    priority: true,
-  },
-  {
-    src: "/images/products/Website Products_20260705_210559_0005.png",
-    alt: "A stack of DityArt Studio personalized keepsakes",
-    caption: "Every piece, a story",
-    className: "right-[3%] top-[26%] z-30 w-[50%] sm:w-[46%]",
-    rotate: 6,
-  },
-  {
-    src: "/images/products/Website Products_20260705_210559_0018.png",
-    alt: "DityArt Studio sticker sheet on a desk",
-    caption: "Tiny details matter",
-    className: "left-[10%] bottom-[4%] z-20 w-[42%] sm:w-[40%]",
-    rotate: 4,
-  },
-];
 
 /**
  * Story — the "About" anchor on the home page.
@@ -233,42 +204,27 @@ export default function Story() {
           </motion.div>
         </div>
 
-        {/* PHOTO cluster — stacked polaroids */}
-        <div className="relative mx-auto h-[28rem] w-full max-w-[34rem] sm:h-[32rem] lg:h-[34rem]">
-          <div
-            aria-hidden
-            className="absolute inset-x-[4%] inset-y-[8%] rotate-[-3deg] rounded-[2.4rem] bg-[#ffd166]"
+{/* STORY IMAGE — single responsive photo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="relative mx-auto w-full max-w-md lg:max-w-lg lg:-rotate-2"
+        >
+          <Image
+            src={STORY_IMAGE.src}
+            alt={STORY_IMAGE.alt}
+            width={720}
+            height={720}
+            priority
+            sizes="(max-width: 640px) 88vw, (max-width: 1024px) 46vw, 38vw"
+            className="h-auto w-full object-contain"
           />
-          <div
-            aria-hidden
-            className="absolute inset-x-[8%] inset-y-[12%] rotate-[3deg] rounded-[2.2rem] border border-[#f0cc71] bg-[#ffb300]"
-          />
-          <Sparkle className="absolute right-[6%] top-[5%]" size={26} color="#ffb300" />
-          <Sparkle className="absolute left-[4%] top-[34%]" size={15} color="#ffd166" />
-          <Sparkle
-            className="absolute right-[10%] bottom-[8%]"
-            size={12}
-            color="#e99500"
-            opacity={0.8}
-            variant="tiny-star"
-          />
-          <span
-            aria-hidden
-            className="absolute left-[6%] top-[8%] h-2 w-2 rounded-full bg-[#ffb300]"
-          />
-          <span
-            aria-hidden
-            className="absolute right-[12%] bottom-[14%] h-3 w-3 rounded-full bg-[#ffd166]"
-            style={{ opacity: 0.7 }}
-          />
-
-          {PHOTOS.map((p) => (
-            <Polaroid key={p.src} photo={p} />
-          ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Stats row */}
+{/* Stats row */}
       <div className="relative mx-auto mt-20 grid max-w-5xl gap-6 px-5 sm:grid-cols-3 lg:px-8">
         {STATS.map((s, i) => (
           <motion.div
@@ -300,37 +256,6 @@ export default function Story() {
   );
 }
 
-/* ------------------------------------------------------------------------- */
-/* Polaroid — one tilted photo card in the cluster                           */
-/* ------------------------------------------------------------------------- */
-function Polaroid({ photo }: { photo: Photo }) {
-  return (
-    <motion.div
-      className={`absolute ${photo.className}`}
-      initial={{ opacity: 0, scale: 0.94, y: 18 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: EASE }}
-      style={{ rotate: photo.rotate }}
-    >
-      <div className="overflow-hidden rounded-[1.35rem] border-[6px] border-white bg-white p-1 shadow-[0_22px_45px_rgba(66,43,4,0.16)]">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[0.85rem]">
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            priority={photo.priority}
-            sizes="(max-width: 1024px) 44vw, 22vw"
-            className="object-cover"
-          />
-        </div>
-      </div>
-      <p className="mt-2 text-center font-display text-sm font-bold text-[#1f1f1f] sm:text-base">
-        {photo.caption}
-      </p>
-    </motion.div>
-  );
-}
 
 
 
