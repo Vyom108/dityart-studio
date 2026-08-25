@@ -1,16 +1,16 @@
 import { MapPinned } from "lucide-react";
 
 const notes = [
-  ["Aarohi", "The tiniest details were so us. It felt incredibly personal from the first message."],
-  ["Niyati", "Beautiful design, kind communication, and a gift everyone asked about."],
-  ["Meera", "Our stationery looked polished but still had the warmth we wanted."],
+  ["Yash Bhavsar", "Amazing experience! The work was excellent, creative, and done with great attention to detail. Very professional and talented. Highly recommended!"],
+  ["Kothari Kajal", "I ordered fridge magnets. They are really great, and the service is excellent too. You can find a wide variety of wonderful customized products there, so you can confidently place an order."],
+  ["Shivangi Madhak", "I got customized stickers for my laptop from them, and they turned out to be of great quality. You should definitely give them a try too! 😊"],
 ];
 
 export default function Testimonials() {
   return (
     <section className="bg-[#fffdf7] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="text-center text-xs font-bold uppercase tracking-[.18em] text-[#a46c00]">Little notes of love</p>
+        <p className="text-center text-xs font-bold uppercase tracking-[.18em] text-[#a46c00]">5.0 stars · 45 Google reviews</p>
         <h2 className="mt-4 text-center font-display text-4xl font-black tracking-[-.05em] sm:text-5xl">Made for people, remembered by people.</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {notes.map(([name, quote]) => (
