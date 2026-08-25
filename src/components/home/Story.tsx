@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Sparkles } from "lucide-react";
@@ -24,20 +23,14 @@ const STATS: Stat[] = [
   { value: "5★", label: "average client joy", accent: "#ffb300" },
 ];
 
-const STORY_IMAGE = {
-  src: "/images/hero/girl-story.png",
-  alt: "DityArt Studio creative process",
-};
-
 /**
  * Story — the "About" anchor on the home page.
  *
  * Composition:
  *   1. Atmospheric background (paper blobs + section sparkles + doodles)
- *   2. Kicker chip + hand-underlined headline + body copy (left column)
- *   3. Polaroid photo cluster (right column)
- *   4. Stats row across the bottom
- *   5. Inline "Share your story" CTA
+ *   2. Kicker chip + hand-underlined headline + body copy
+ *   3. Stats row across the bottom
+ *   4. Inline "Share your story" CTA
  */
 export default function Story() {
   return (
@@ -134,8 +127,7 @@ export default function Story() {
         height={60}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8">
-        {/* TEXT column */}
+      <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -153,7 +145,7 @@ export default function Story() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, ease: SETTLE, delay: 0.1 }}
-            className="mt-6 max-w-xl font-display text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#1f1f1f] sm:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#1f1f1f] sm:text-5xl lg:text-6xl"
           >
             Small studio.
             <br />
@@ -165,7 +157,7 @@ export default function Story() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-            className="mt-6 max-w-lg text-base leading-7 text-[#1f1f1f]/70 sm:text-lg sm:leading-8"
+            className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[#1f1f1f]/70 sm:text-lg sm:leading-8"
           >
             {site.name} began in {site.since} as a tiny desk, a stack of paper and the simple belief that ordinary gifts can feel extraordinary when they&rsquo;re made for a specific person. Today we&rsquo;re a small team of makers, illustrators and stationery lovers in {site.city}, still hand finishing every order.
           </motion.p>
@@ -175,7 +167,7 @@ export default function Story() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.28 }}
-            className="mt-4 max-w-lg text-base leading-7 text-[#1f1f1f]/70 sm:text-lg sm:leading-8"
+            className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#1f1f1f]/70 sm:text-lg sm:leading-8"
           >
             We work in small batches, check every colour by eye, and keep talking with you on WhatsApp until you have something you love. No mass production and no generic templates. We make each design for your story.
           </motion.p>
@@ -185,7 +177,7 @@ export default function Story() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.36 }}
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-8 flex flex-wrap justify-center gap-3"
           >
             <Link
               href="/#contact"
@@ -203,25 +195,6 @@ export default function Story() {
             </Link>
           </motion.div>
         </div>
-
-{/* STORY IMAGE — single responsive photo */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className="relative mx-auto w-full max-w-md lg:max-w-lg lg:-rotate-2"
-        >
-          <Image
-            src={STORY_IMAGE.src}
-            alt={STORY_IMAGE.alt}
-            width={720}
-            height={720}
-            priority
-            sizes="(max-width: 640px) 88vw, (max-width: 1024px) 46vw, 38vw"
-            className="h-auto w-full object-contain"
-          />
-        </motion.div>
       </div>
 
 {/* Stats row */}

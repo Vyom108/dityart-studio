@@ -35,7 +35,7 @@ export default function Navbar() {
         >
           <div className="flex h-[74px] items-center justify-between px-5 sm:px-8 lg:px-10">
 
-            <Logo className="scale-110" />
+            <Logo variant="circle" />
 
             <div className="hidden items-center gap-8 xl:gap-11 lg:flex">
 

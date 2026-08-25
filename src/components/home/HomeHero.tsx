@@ -36,10 +36,36 @@ export default function HomeHero() {
         <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.75, ease: EASE, delay: 0.08 }} className="relative mx-auto h-[20rem] w-full max-w-[37rem] sm:h-[27rem] lg:h-[31rem]">
           <div aria-hidden className="absolute inset-x-[8%] inset-y-[10%] rotate-[-3deg] rounded-[2.4rem] bg-[#ffd166]" />
           <div aria-hidden className="absolute inset-x-[12%] inset-y-[13%] rotate-[3deg] rounded-[2.2rem] bg-[#ffb300]" />
-          <div aria-hidden className="absolute inset-x-[16%] inset-y-[16%] rounded-[2rem] bg-[#fff3d6]" />
-          <ProductCard src="/images/products/Website Products_20260705_210558_0000.png" alt="DityArt personalized wallet card" label="Wallet cards" className="left-[5%] top-[15%] w-[55%]" rotate={-6} priority />
-          <ProductCard src="/images/products/Website Products_20260705_210559_0002.png" alt="DityArt fridge magnets" label="Fridge magnets" className="bottom-[12%] right-[4%] w-[48%]" rotate={7} />
+          <div className="absolute inset-x-[16%] inset-y-[16%] overflow-hidden rounded-[2rem] bg-[#fff3d6]">
+            <Image
+              src="/images/hero/girl-story-cutout.png"
+              alt="DityArt Studio girl illustration"
+              width={512}
+              height={512}
+              priority
+              sizes="(max-width: 640px) 54vw, 32vw"
+              className="absolute -bottom-[10%] -left-[12%] h-[112%] w-auto max-w-none object-contain object-bottom"
+            />
+            <div className="absolute right-[4%] top-1/2 w-[53%] -translate-y-1/2 rounded-2xl bg-white/5 px-3 py-4 text-center sm:px-4 sm:py-5">
+              <Image
+                src="/images/brand/dityart-studio.png"
+                alt="DityArt Studio"
+                width={321}
+                height={152}
+                priority
+                sizes="(max-width: 640px) 26vw, 15vw"
+                className="mx-auto h-auto w-full max-w-[15rem] object-contain"
+              />
+              <p className="mt-3 font-display text-sm font-black leading-tight text-[#1f1f1f] sm:text-lg lg:text-xl">
+                Where Creativity <span className="text-[#e99500]">Meets Craftsmanship</span>
+              </p>
+            </div>
+          </div>
+          <Sparkle className="absolute left-[10%] top-[18%]" size={17} color="#ffd166" opacity={0.9} />
+          <Sparkle className="absolute left-[18%] bottom-[13%]" size={13} color="#ffb300" opacity={0.75} variant="tiny-star" />
           <Sparkle className="absolute right-[16%] top-[11%]" size={22} color="#ffb300" />
+          <Sparkle className="absolute right-[8%] top-[37%]" size={14} color="#ffd166" opacity={0.85} variant="tiny-star" />
+          <Sparkle className="absolute bottom-[9%] right-[20%]" size={18} color="#ffb300" opacity={0.7} />
           <Sparkle className="absolute bottom-[15%] left-[13%]" size={14} color="#ffd166" />
         </motion.div>
       </div>
@@ -50,10 +76,6 @@ export default function HomeHero() {
 
 function HandUnderline({ children }: { children: React.ReactNode }) {
   return <span className="relative inline-block"><span className="relative z-10">{children}</span><motion.span aria-hidden className="absolute -bottom-3 left-[2%] z-0 h-2 w-[96%] translate-y-2 origin-left rotate-[-2deg] rounded-full bg-[#ffd166] sm:-bottom-4 sm:h-2.5" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.85, ease: SETTLE, delay: 0.55 }} /></span>;
-}
-
-function ProductCard({ src, alt, label, className, rotate, priority = false }: { src: string; alt: string; label: string; className: string; rotate: number; priority?: boolean }) {
-  return <motion.div className={`absolute z-10 ${className}`} style={{ rotate }} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: EASE, delay: 0.25 }}><div className="overflow-hidden rounded-[1.35rem] border-[5px] border-white bg-white shadow-[0_18px_35px_rgba(66,43,4,0.16)]"><div className="relative aspect-[4/3]"><Image src={src} alt={alt} fill priority={priority} sizes="(max-width: 640px) 56vw, 32vw" className="object-cover" /></div></div><p className="mt-1.5 text-center font-display text-sm font-bold text-[#1f1f1f]">{label}</p></motion.div>;
 }
 
 

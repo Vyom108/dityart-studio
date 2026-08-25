@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heart, MessageCircle } from "lucide-react";
+import { Heart, MapPinned, MessageCircle } from "lucide-react";
 
 import SectionSparkles from "@/components/decor/SectionSparkles";
 import FloatingConfetti from "@/components/decor/FloatingConfetti";
@@ -74,12 +74,12 @@ export default function Footer() {
         className="absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffd166]/30 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 lg:grid-cols-[1.1fr_1fr_1fr] lg:gap-12 lg:px-8">
-        <div>
-          <Logo />
-          <p className="mt-5 max-w-sm text-sm leading-6 text-[#1f1f1f]/65">
-            Custom gifts, kids stationery, and business designs made with care in {site.city}.
-          </p>
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 text-center sm:text-left lg:flex-row lg:items-center lg:justify-between lg:gap-7 lg:px-8">
+        <div className="flex shrink-0 flex-col items-center lg:items-start">
+          <Logo variant="circle" imageClassName="h-20 w-20" />
+          <Link href="/privacy" className="mt-5 inline-block text-sm leading-6 text-[#1f1f1f]/65 transition hover:text-[#e98d00] hover:underline">
+            Privacy Policy
+          </Link>
           <div className="mt-6 flex items-center gap-2 text-xs font-bold text-[#1f1f1f]/55">
             <Sparkle size={11} color="#ffb300" variant="tiny-star" />
             <span>Since {site.since}</span>
@@ -88,11 +88,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
+        <div className="shrink-0 lg:flex lg:items-center lg:gap-5">
+          <p className="shrink-0 text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
             Studio
           </p>
-          <ul className="mt-5 space-y-3 text-sm text-[#1f1f1f]/80">
+          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-3 text-sm text-[#1f1f1f]/80 lg:mt-0">
             <li><Link href="/#products" className="transition hover:text-[#e98d00]">Explore products</Link></li>
             <li><Link href="/products" className="transition hover:text-[#e98d00]">All creations</Link></li>
             <li><Link href="/custom-order" className="transition hover:text-[#e98d00]">Start a custom order</Link></li>
@@ -100,17 +100,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
+        <div className="shrink-0 lg:flex lg:items-center lg:gap-5">
+          <p className="shrink-0 text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
             Reach us
           </p>
-          <ul className="mt-5 space-y-3 text-sm">
+          <ul className="mt-5 flex flex-wrap justify-center gap-x-3 gap-y-2 text-[13px] sm:text-sm lg:mt-0 lg:justify-start lg:gap-x-5 lg:gap-y-3">
             <li>
               <a
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-[#1f1f1f]/80 transition hover:text-[#e98d00]"
+                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
               >
                 <MessageCircle size={15} className="text-[#25D366]" />
                 Chat on WhatsApp
@@ -121,10 +121,21 @@ export default function Footer() {
                 href={site.contact.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-[#1f1f1f]/80 transition hover:text-[#e98d00]"
+                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
               >
                 <InstagramMark />
                 @dityartstudio
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
+              >
+                <MapPinned size={15} className="text-[#4285F4]" />
+                Find us on Google
               </a>
             </li>
           </ul>
