@@ -135,7 +135,7 @@ export default function Footer() {
               className="group inline-flex items-center gap-1.5 whitespace-nowrap underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]"
             >
               <FacebookMark />
-              FB
+              Facebook
             </a>
             <span aria-hidden>||</span>
             <a href={`mailto:${site.contact.email}`} className="inline-flex items-center gap-1.5 underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
