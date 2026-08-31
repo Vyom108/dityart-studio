@@ -122,32 +122,36 @@ export default function Footer() {
           </a>
         </nav>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:justify-end md:text-right sm:text-sm">
-          <a href={`mailto:${site.contact.email}`} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-            {site.contact.email}
-          </a>
-          <span aria-hidden>||</span>
-          <a href={phoneHref} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-            {phoneDisplay}
-          </a>
-          <span aria-hidden>||</span>
-          <Link href="/privacy" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-            Privacy Policy
-          </Link>
-          <span aria-hidden>||</span>
-          <Link href="/terms" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-            Terms of Service
-          </Link>
-          <span aria-hidden>||</span>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 transition hover:text-[#e98d00]"
-          >
-            <MapPinned size={14} className="text-[#4285F4]" />
-            Rajkot
-          </a>
+        <div className="flex flex-col items-center gap-2 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:items-end md:text-right sm:text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
+            <a href={`mailto:${site.contact.email}`} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              {site.contact.email}
+            </a>
+            <span aria-hidden>||</span>
+            <a href={phoneHref} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              {phoneDisplay}
+            </a>
+            <span aria-hidden>||</span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 transition hover:text-[#e98d00]"
+            >
+              <MapPinned size={14} className="text-[#4285F4]" />
+              Rajkot
+            </a>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
+            <Link href="/privacy" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              Privacy Policy
+            </Link>
+            <span aria-hidden>||</span>
+            <Link href="/terms" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
 
