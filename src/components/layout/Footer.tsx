@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heart, MapPinned, MessageCircle } from "lucide-react";
+import { Heart, Mail, MapPinned, MessageCircle, Phone } from "lucide-react";
 
 import SectionSparkles from "@/components/decor/SectionSparkles";
 import FloatingConfetti from "@/components/decor/FloatingConfetti";
@@ -87,63 +87,69 @@ export default function Footer() {
         className="absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffd166]/30 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 text-center md:grid-cols-[1fr_auto_1fr] md:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 text-center md:grid-cols-[auto_1fr] md:px-8">
         <div className="flex justify-center md:justify-start">
           <Logo variant="circle" imageClassName="h-20 w-20" />
         </div>
 
-        <nav aria-label="Social links" className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[13px] sm:text-sm">
-          <a
-            href={wa}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-          >
-            <MessageCircle size={15} className="text-[#25D366]" />
-            WhatsApp
-          </a>
-          <a
-            href={site.contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-          >
-            <InstagramMark />
-            Instagram
-          </a>
-          <a
-            href={site.contact.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-          >
-            <FacebookMark />
-            Facebook
-          </a>
-        </nav>
-
         <div className="flex flex-col items-center gap-2 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:items-end md:text-right sm:text-sm">
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
-            <a href={`mailto:${site.contact.email}`} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-              {site.contact.email}
-            </a>
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
+            <Link href="/about" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              About Us
+            </Link>
             <span aria-hidden>||</span>
-            <a href={phoneHref} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
-              {phoneDisplay}
+            <Link href="/products" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              Explore Products
+            </Link>
+            <span aria-hidden>||</span>
+            <Link href="/custom-order" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              Start a Custom Order
+            </Link>
+          </nav>
+
+          <nav aria-label="Social and contact links" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]"
+            >
+              <MessageCircle size={15} className="text-[#25D366]" />
+              WhatsApp
             </a>
             <span aria-hidden>||</span>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
+              href={site.contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 transition hover:text-[#e98d00]"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]"
             >
-              <MapPinned size={14} className="text-[#4285F4]" />
-              Rajkot
+              <InstagramMark />
+              Instagram
             </a>
-          </div>
+            <span aria-hidden>||</span>
+            <a
+              href={site.contact.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]"
+            >
+              <FacebookMark />
+              FB
+            </a>
+            <span aria-hidden>||</span>
+            <a href={`mailto:${site.contact.email}`} className="inline-flex items-center gap-1.5 underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              <Mail size={15} className="text-[#e98d00]" />
+              Mail
+            </a>
+            <span aria-hidden>||</span>
+            <a href={phoneHref} className="inline-flex items-center gap-1.5 underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+              <Phone size={15} className="text-[#25D366]" />
+              {phoneDisplay}
+            </a>
+          </nav>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:translate-y-2 md:justify-end">
+          <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
             <Link href="/privacy" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
               Privacy Policy
             </Link>
@@ -151,7 +157,17 @@ export default function Footer() {
             <Link href="/terms" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
               Terms of Service
             </Link>
-          </div>
+            <span aria-hidden>||</span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]"
+            >
+              <MapPinned size={14} className="text-[#4285F4]" />
+              Rajkot
+            </a>
+          </nav>
         </div>
       </div>
 
