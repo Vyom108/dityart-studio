@@ -122,7 +122,7 @@ export default function Footer() {
           </a>
         </nav>
 
-        <div className="flex flex-col items-center gap-2 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:translate-y-2 md:items-end md:text-right sm:text-sm">
+        <div className="flex flex-col items-center gap-2 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:items-end md:text-right sm:text-sm">
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
             <a href={`mailto:${site.contact.email}`} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
               {site.contact.email}
@@ -143,7 +143,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-end">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:translate-y-2 md:justify-end">
             <Link href="/privacy" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
               Privacy Policy
             </Link>
