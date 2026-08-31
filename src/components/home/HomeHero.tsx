@@ -54,8 +54,7 @@ export default function HomeHero() {
                 height={1800}
                 priority
                 sizes="(max-width: 640px) 26vw, 15vw"
-                className="h-auto w-full max-w-[18rem] object-contain lg:max-w-[20rem]"
-              />
+                className="h-auto w-full max-w-[18rem] translate-x-2 object-contain lg:max-w-[20rem] lg:translate-x-5"              />
             </div>
           </div>
           <Sparkle className="absolute left-[10%] top-[18%]" size={17} color="#ffd166" opacity={0.9} />
