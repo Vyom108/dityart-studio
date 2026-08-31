@@ -23,7 +23,7 @@ export default function HomeHero() {
           <p className="inline-flex items-center gap-2 rounded-full border border-[#f1d496] bg-[#fff8e8] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#805500] sm:text-xs"><Sparkles size={14} fill="currentColor" /> Made with heart in Rajkot</p>
           <h1 className="mt-5 max-w-xl font-display text-[3rem] font-black leading-[0.95] tracking-[-0.06em] text-[#1f1f1f] sm:text-6xl lg:text-[3.75rem]">
             Where Creativity,            <br />
-            <span className="relative inline-block pb-3 text-[#e99500] sm:pb-4"><HandUnderline>Meets Craftmanship</HandUnderline></span>
+            <span className="relative inline-block pb-3 text-[#e99500] sm:pb-4"><HandUnderline>Meets Craftsmanship</HandUnderline></span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-[#1f1f1f]/70 sm:text-lg sm:leading-8">Personalized gifts, kids stationery, and business details made for your people and your story.</p>
           <div className="mt-7 flex flex-wrap gap-3">
@@ -46,19 +46,16 @@ export default function HomeHero() {
               sizes="(max-width: 640px) 54vw, 32vw"
               className="absolute -bottom-[10%] -left-[12%] h-[112%] w-auto max-w-none object-contain object-bottom"
             />
-            <div className="absolute right-[4%] top-1/2 w-[53%] -translate-y-1/2 rounded-2xl bg-white/5 px-3 py-4 text-center sm:px-4 sm:py-5">
+            <div className="absolute right-[3%] top-1/2 flex w-[58%] -translate-y-1/2 items-center justify-center rounded-2xl bg-white/5 px-2 py-2 text-center sm:px-3 sm:py-3">
               <Image
-                src="/images/brand/dityart-studio.png"
+                src="/images/brand/horizontal-logo.png"
                 alt="DityArt Studio"
-                width={321}
-                height={152}
+                width={3600}
+                height={1800}
                 priority
                 sizes="(max-width: 640px) 26vw, 15vw"
-                className="mx-auto h-auto w-full max-w-[15rem] object-contain"
+                className="h-auto w-full max-w-[18rem] object-contain lg:max-w-[20rem]"
               />
-              <p className="mt-3 font-display text-sm font-black leading-tight text-[#1f1f1f] sm:text-lg lg:text-xl">
-                Where Creativity <span className="text-[#e99500]">Meets Craftsmanship</span>
-              </p>
             </div>
           </div>
           <Sparkle className="absolute left-[10%] top-[18%]" size={17} color="#ffd166" opacity={0.9} />
@@ -77,5 +74,3 @@ export default function HomeHero() {
 function HandUnderline({ children }: { children: React.ReactNode }) {
   return <span className="relative inline-block"><span className="relative z-10">{children}</span><motion.span aria-hidden className="absolute -bottom-3 left-[2%] z-0 h-2 w-[96%] translate-y-2 origin-left rotate-[-2deg] rounded-full bg-[#ffd166] sm:-bottom-4 sm:h-2.5" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.85, ease: SETTLE, delay: 0.55 }} /></span>;
 }
-
-

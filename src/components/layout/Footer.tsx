@@ -4,7 +4,6 @@ import { Heart, MapPinned, MessageCircle } from "lucide-react";
 import SectionSparkles from "@/components/decor/SectionSparkles";
 import FloatingConfetti from "@/components/decor/FloatingConfetti";
 import Squiggle from "@/components/decor/Squiggle";
-import Sparkle from "@/components/decor/Sparkle";
 import Logo from "@/components/shared/Logo";
 import { site } from "@/config/site";
 
@@ -18,6 +17,17 @@ function InstagramMark() {
   );
 }
 
+function FacebookMark({ className = "h-[15px] w-[15px]" }: { className?: string }) {
+  return (
+    <svg aria-hidden viewBox="0 0 24 24" className={`${className} text-[#1877f2]`}>
+      <path
+        fill="currentColor"
+        d="M14.2 8.1V6.7c0-.7.5-.9.8-.9h2V2.2L14.3 2c-3 0-4.6 1.8-4.6 5v1.1H6.8v3.9h2.9V22h4.4V12h3.1l.4-3.9h-3.4z"
+      />
+    </svg>
+  );
+}
+
 /**
  * Site-wide footer. Rich decoration but light text — a handcrafted
  * sign-off rather than a wall of legal copy.
@@ -26,6 +36,9 @@ export default function Footer() {
   const wa = `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(
     "Hi DityArt Studio! I'd like to customize something.",
   )}`;
+  const phoneDisplay = "+91 90819 13600";
+  const phoneHref = `tel:+${site.contact.whatsapp}`;
+
   return (
     <footer className="relative isolate overflow-hidden border-t border-[#f0e4cc] bg-[#fff8e9] py-14 sm:py-16">
       <SectionSparkles seed={21} density="med" palette="amber" />
@@ -74,71 +87,67 @@ export default function Footer() {
         className="absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffd166]/30 blur-3xl"
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 text-center sm:text-left lg:flex-row lg:items-center lg:justify-between lg:gap-7 lg:px-8">
-        <div className="flex shrink-0 flex-col items-center lg:items-start">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 text-center md:grid-cols-[1fr_auto_1fr] md:px-8">
+        <div className="flex justify-center md:justify-start">
           <Logo variant="circle" imageClassName="h-20 w-20" />
-          <Link href="/privacy" className="mt-5 inline-block text-sm leading-6 text-[#1f1f1f]/65 transition hover:text-[#e98d00] hover:underline">
+        </div>
+
+        <nav aria-label="Social links" className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[13px] sm:text-sm">
+          <a
+            href={wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
+          >
+            <MessageCircle size={15} className="text-[#25D366]" />
+            WhatsApp
+          </a>
+          <a
+            href={site.contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
+          >
+            <InstagramMark />
+            Instagram
+          </a>
+          <a
+            href={site.contact.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
+          >
+            <FacebookMark />
+            Facebook
+          </a>
+        </nav>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[13px] font-bold leading-6 text-[#1f1f1f]/70 md:justify-end md:text-right sm:text-sm">
+          <a href={`mailto:${site.contact.email}`} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+            {site.contact.email}
+          </a>
+          <span aria-hidden>||</span>
+          <a href={phoneHref} className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+            {phoneDisplay}
+          </a>
+          <span aria-hidden>||</span>
+          <Link href="/privacy" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
             Privacy Policy
           </Link>
-          <div className="mt-6 flex items-center gap-2 text-xs font-bold text-[#1f1f1f]/55">
-            <Sparkle size={11} color="#ffb300" variant="tiny-star" />
-            <span>Since {site.since}</span>
-            <span aria-hidden className="mx-2 h-1 w-1 rounded-full bg-[#1f1f1f]/25" />
-            <span>{site.hours.value}</span>
-          </div>
-        </div>
-
-        <div className="shrink-0 lg:flex lg:items-center lg:gap-5">
-          <p className="shrink-0 text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
-            Studio
-          </p>
-          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-3 text-sm text-[#1f1f1f]/80 lg:mt-0">
-            <li><Link href="/#products" className="transition hover:text-[#e98d00]">Explore products</Link></li>
-            <li><Link href="/products" className="transition hover:text-[#e98d00]">All creations</Link></li>
-            <li><Link href="/custom-order" className="transition hover:text-[#e98d00]">Start a custom order</Link></li>
-            <li><Link href="/#contact" className="transition hover:text-[#e98d00]">Say hello</Link></li>
-          </ul>
-        </div>
-
-        <div className="shrink-0 lg:flex lg:items-center lg:gap-5">
-          <p className="shrink-0 text-[11px] font-bold uppercase tracking-[0.22em] text-[#dd8d00]">
-            Reach us
-          </p>
-          <ul className="mt-5 flex flex-wrap justify-center gap-x-3 gap-y-2 text-[13px] sm:text-sm lg:mt-0 lg:justify-start lg:gap-x-5 lg:gap-y-3">
-            <li>
-              <a
-                href={wa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-              >
-                <MessageCircle size={15} className="text-[#25D366]" />
-                Chat on WhatsApp
-              </a>
-            </li>
-            <li>
-              <a
-                href={site.contact.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-              >
-                <InstagramMark />
-                @dityartstudio
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[#1f1f1f]/80 transition hover:text-[#e98d00] sm:gap-2"
-              >
-                <MapPinned size={15} className="text-[#4285F4]" />
-                Find us on Google
-              </a>
-            </li>
-          </ul>
+          <span aria-hidden>||</span>
+          <Link href="/terms" className="underline decoration-[#1f1f1f]/30 underline-offset-2 transition hover:text-[#e98d00]">
+            Terms of Service
+          </Link>
+          <span aria-hidden>||</span>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=DityArt+Studio+Rajkot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 transition hover:text-[#e98d00]"
+          >
+            <MapPinned size={14} className="text-[#4285F4]" />
+            Rajkot
+          </a>
         </div>
       </div>
 
@@ -164,7 +173,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-
-

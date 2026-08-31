@@ -7,7 +7,6 @@ import { ArrowRight, Heart, Sparkles } from "lucide-react";
 import FloatingConfetti from "@/components/decor/FloatingConfetti";
 import PaperBlob from "@/components/decor/PaperBlob";
 import SectionSparkles from "@/components/decor/SectionSparkles";
-import Sparkle from "@/components/decor/Sparkle";
 import Squiggle from "@/components/decor/Squiggle";
 import DoodleArrow from "@/components/decor/DoodleArrow";
 import { site } from "@/config/site";

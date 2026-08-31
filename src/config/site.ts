@@ -14,7 +14,7 @@ export const site = {
   country: "India",
   since: 2019,
   contact: {
-    email: "hello@dityartstudio.com",
+    email: "dityartstudio@gmail.com",
     whatsapp: "919081913600",
     instagram: "https://instagram.com/dityart_studio",
     facebook: "https://facebook.com/dityartstudio",
