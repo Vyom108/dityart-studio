@@ -435,7 +435,7 @@ function HeroArtwork() {
         <div
           className="
             absolute
-            right-[0%]
+            right-[6%]
             top-1/2
             flex
             w-[55%]
@@ -464,7 +464,7 @@ function HeroArtwork() {
               h-auto
               w-full
               max-w-[18rem]
-              translate-x-1
+              translate-x-0
               object-contain
               sm:translate-x-4
               lg:max-w-[20rem]
