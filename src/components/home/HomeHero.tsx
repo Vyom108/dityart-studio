@@ -464,7 +464,7 @@ function HeroArtwork() {
               h-auto
               w-full
               max-w-[18rem]
-              translate-x-3
+              translate-x-1
               object-contain
               sm:translate-x-4
               lg:max-w-[20rem]
