@@ -438,7 +438,7 @@ function HeroArtwork() {
             right-[3%]
             top-1/2
             flex
-            w-[55%]
+            w-[50%]
             -translate-y-1/2
             items-center
             justify-center
