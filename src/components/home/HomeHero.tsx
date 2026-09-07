@@ -11,7 +11,9 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#fffdf7] pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
-      {/* Background glow */}
+      {/* =========================================================
+          BACKGROUND GLOW
+      ========================================================= */}
       <div
         aria-hidden
         className="absolute left-[-8rem] top-24 h-64 w-64 rounded-full bg-[#ffd166]/25 blur-3xl"
@@ -22,7 +24,16 @@ export default function HomeHero() {
         className="absolute right-[-6rem] top-20 h-72 w-72 rounded-full bg-[#ffb300]/15 blur-3xl"
       />
 
-      {/* Decorative sparkles */}
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-[45%] h-72 w-72 -translate-x-1/2 rounded-full bg-[#ffd166]/10 blur-3xl"
+      />
+
+      {/* =========================================================
+          PAGE DECORATIVE SPARKLES
+      ========================================================= */}
+
+      {/* Existing sparkle */}
       <Sparkle
         className="absolute left-[5%] top-[31%] hidden sm:block"
         size={18}
@@ -45,17 +56,266 @@ export default function HomeHero() {
         variant="tiny-star"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 sm:gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-8">
-        {/* =========================
-            MOBILE HERO ARTWORK
-            ========================= */}
-        <div className="order-1 lg:hidden">
+      {/* Extra sparkle 1 */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[11%] top-[17%] hidden sm:block"
+        animate={{
+          y: [0, -8, 0],
+          rotate: [0, 8, 0],
+          opacity: [0.4, 0.9, 0.4],
+        }}
+        transition={{
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <Sparkle
+          size={13}
+          color="#ffb300"
+          opacity={0.7}
+          variant="tiny-star"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 2 */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[18%] top-[46%] hidden lg:block"
+        animate={{
+          y: [0, 7, 0],
+          rotate: [0, -10, 0],
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.8,
+        }}
+      >
+        <Sparkle size={16} color="#ffd166" opacity={0.7} />
+      </motion.div>
+
+      {/* Extra sparkle 3 */}
+      <motion.div
+        aria-hidden
+        className="absolute right-[18%] top-[34%] hidden sm:block"
+        animate={{
+          y: [0, -6, 0],
+          rotate: [0, 12, 0],
+          opacity: [0.35, 0.85, 0.35],
+        }}
+        transition={{
+          duration: 3.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.1,
+        }}
+      >
+        <Sparkle
+          size={12}
+          color="#ffb300"
+          opacity={0.65}
+          variant="tiny-star"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 4 */}
+      <motion.div
+        aria-hidden
+        className="absolute right-[5%] top-[53%] hidden lg:block"
+        animate={{
+          y: [0, 9, 0],
+          rotate: [0, -8, 0],
+          opacity: [0.3, 0.75, 0.3],
+        }}
+        transition={{
+          duration: 4.2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.4,
+        }}
+      >
+        <Sparkle size={18} color="#ffd166" opacity={0.65} />
+      </motion.div>
+
+      {/* Extra sparkle 5 */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[7%] bottom-[27%] hidden lg:block"
+        animate={{
+          y: [0, -7, 0],
+          rotate: [0, 10, 0],
+          opacity: [0.25, 0.7, 0.25],
+        }}
+        transition={{
+          duration: 4.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.4,
+        }}
+      >
+        <Sparkle
+          size={14}
+          color="#ffb300"
+          opacity={0.55}
+          variant="tiny-star"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 6 */}
+      <motion.div
+        aria-hidden
+        className="absolute right-[10%] bottom-[25%] hidden sm:block"
+        animate={{
+          y: [0, 6, 0],
+          rotate: [0, -12, 0],
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{
+          duration: 3.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.9,
+        }}
+      >
+        <Sparkle
+          size={13}
+          color="#ffd166"
+          opacity={0.65}
+        />
+      </motion.div>
+
+      {/* Extra sparkle 7 */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[25%] top-[12%] hidden lg:block"
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.25, 0.8, 0.25],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.7,
+        }}
+      >
+        <Sparkles
+          size={14}
+          fill="currentColor"
+          className="text-[#ffd166]"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 8 */}
+      <motion.div
+        aria-hidden
+        className="absolute right-[25%] top-[14%] hidden lg:block"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.25, 0.75, 0.25],
+        }}
+        transition={{
+          duration: 3.4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.6,
+        }}
+      >
+        <Sparkles
+          size={12}
+          fill="currentColor"
+          className="text-[#ffb300]"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 9 */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[14%] bottom-[18%] hidden sm:block"
+        animate={{
+          y: [0, -5, 0],
+          opacity: [0.2, 0.7, 0.2],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      >
+        <Sparkle
+          size={11}
+          color="#ffd166"
+          opacity={0.6}
+          variant="tiny-star"
+        />
+      </motion.div>
+
+      {/* Extra sparkle 10 */}
+      <motion.div
+        aria-hidden
+        className="absolute right-[30%] bottom-[17%] hidden lg:block"
+        animate={{
+          y: [0, 7, 0],
+          rotate: [0, 15, 0],
+          opacity: [0.25, 0.7, 0.25],
+        }}
+        transition={{
+          duration: 4.3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.2,
+        }}
+      >
+        <Sparkle
+          size={13}
+          color="#ffb300"
+          opacity={0.55}
+        />
+      </motion.div>
+
+      {/* =========================================================
+          HERO WRAPPER
+
+          MOBILE:
+          Artwork
+          ↓
+          Content
+
+          DESKTOP:
+          Artwork centered
+          ↓
+          Content centered
+      ========================================================= */}
+      <div
+        className="
+          relative
+          mx-auto
+          flex
+          max-w-7xl
+          flex-col
+          items-center
+          gap-8
+          px-5
+          sm:gap-10
+          lg:gap-5
+          lg:px-8
+        "
+      >
+        {/* =========================================================
+            HERO ARTWORK
+        ========================================================= */}
+        <div className="order-1 w-full">
           <HeroArtwork />
         </div>
 
-        {/* =========================
+        {/* =========================================================
             HERO CONTENT
-            ========================= */}
+        ========================================================= */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,22 +323,28 @@ export default function HomeHero() {
             duration: 0.65,
             ease: EASE,
           }}
-          className="order-2 text-center lg:order-1 lg:text-left"
+          className="
+            order-2
+            mx-auto
+            w-full
+            max-w-3xl
+            text-center
+          "
         >
           {/* Badge */}
-          <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#f1d496] bg-[#fff8e8] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#805500] sm:text-xs lg:mx-0">
+          <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#f1d496] bg-[#fff8e8] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#805500] sm:text-xs">
             <Sparkles size={14} fill="currentColor" />
             Made with heart in Rajkot
           </p>
 
           {/* Description */}
-          <p className="mx-auto mt-5 max-w-lg text-[15px] leading-7 text-[#1f1f1f]/70 sm:mt-6 sm:text-lg sm:leading-8 lg:mx-0">
+          <p className="mx-auto mt-5 max-w-lg text-[15px] leading-7 text-[#1f1f1f]/70 sm:mt-6 sm:text-lg sm:leading-8">
             Personalized gifts, kids stationery, and business details made for
             your people and your story.
           </p>
 
           {/* Buttons */}
-          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-7 lg:justify-start">
+          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-7">
             <Link
               href="#products"
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1f1f1f] px-5 py-3 text-sm font-bold text-white shadow-[0_12px_25px_rgba(31,31,31,0.16)] transition hover:-translate-y-0.5 hover:bg-[#363636] sm:px-6 sm:text-base"
@@ -106,22 +372,17 @@ export default function HomeHero() {
           </div>
 
           {/* Tagline */}
-          <p className="mt-6 flex items-center justify-center gap-2 text-sm font-semibold text-[#1f1f1f]/60 sm:mt-7 lg:justify-start">
+          <p className="mt-6 flex items-center justify-center gap-2 text-sm font-semibold text-[#1f1f1f]/60 sm:mt-7">
             <span className="text-[#ffb300]">✦ ✦ ✦</span>
 
             <span>Tiny Details, Big Feelings.</span>
           </p>
         </motion.div>
-
-        {/* =========================
-            DESKTOP HERO ARTWORK
-            ========================= */}
-        <div className="order-2 hidden lg:block">
-          <HeroArtwork />
-        </div>
       </div>
 
-      {/* Browse products */}
+      {/* =========================================================
+          BROWSE PRODUCTS
+      ========================================================= */}
       <a
         href="#products"
         className="relative mx-auto mt-6 flex w-fit items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-[#785300] transition hover:text-[#1f1f1f] sm:mt-8"
@@ -213,48 +474,177 @@ function HeroArtwork() {
         </div>
       </div>
 
-      {/* Artwork sparkles */}
-      <Sparkle
+      {/* =========================================================
+          ARTWORK SPARKLES
+      ========================================================= */}
+
+      <motion.div
+        animate={{
+          y: [0, -6, 0],
+          rotate: [0, 8, 0],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 3.2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="absolute left-[10%] top-[18%]"
-        size={17}
-        color="#ffd166"
-        opacity={0.9}
-      />
+      >
+        <Sparkle
+          size={17}
+          color="#ffd166"
+          opacity={0.9}
+        />
+      </motion.div>
 
-      <Sparkle
+      <motion.div
+        animate={{
+          y: [0, 5, 0],
+          rotate: [0, -10, 0],
+          opacity: [0.4, 0.9, 0.4],
+        }}
+        transition={{
+          duration: 3.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.6,
+        }}
         className="absolute left-[18%] bottom-[13%]"
-        size={13}
-        color="#ffb300"
-        opacity={0.75}
-        variant="tiny-star"
-      />
+      >
+        <Sparkle
+          size={13}
+          color="#ffb300"
+          opacity={0.75}
+          variant="tiny-star"
+        />
+      </motion.div>
 
-      <Sparkle
+      <motion.div
+        animate={{
+          scale: [1, 1.18, 1],
+          rotate: [0, 12, 0],
+          opacity: [0.45, 1, 0.45],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.9,
+        }}
         className="absolute right-[16%] top-[11%]"
-        size={22}
-        color="#ffb300"
-      />
+      >
+        <Sparkle
+          size={22}
+          color="#ffb300"
+        />
+      </motion.div>
 
-      <Sparkle
+      <motion.div
+        animate={{
+          y: [0, -5, 0],
+          rotate: [0, -8, 0],
+          opacity: [0.4, 0.85, 0.4],
+        }}
+        transition={{
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.3,
+        }}
         className="absolute right-[8%] top-[37%]"
-        size={14}
-        color="#ffd166"
-        opacity={0.85}
-        variant="tiny-star"
-      />
+      >
+        <Sparkle
+          size={14}
+          color="#ffd166"
+          opacity={0.85}
+          variant="tiny-star"
+        />
+      </motion.div>
 
-      <Sparkle
+      <motion.div
+        animate={{
+          y: [0, 6, 0],
+          rotate: [0, 10, 0],
+          opacity: [0.35, 0.8, 0.35],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.3,
+        }}
         className="absolute bottom-[9%] right-[20%]"
-        size={18}
-        color="#ffb300"
-        opacity={0.7}
-      />
+      >
+        <Sparkle
+          size={18}
+          color="#ffb300"
+          opacity={0.7}
+        />
+      </motion.div>
 
-      <Sparkle
+      <motion.div
+        animate={{
+          y: [0, -5, 0],
+          opacity: [0.35, 0.8, 0.35],
+        }}
+        transition={{
+          duration: 3.7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.6,
+        }}
         className="absolute bottom-[15%] left-[13%]"
-        size={14}
-        color="#ffd166"
-      />
+      >
+        <Sparkle
+          size={14}
+          color="#ffd166"
+        />
+      </motion.div>
+
+      {/* Extra artwork sparkle */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.25, 0.8, 0.25],
+        }}
+        transition={{
+          duration: 2.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.5,
+        }}
+        className="absolute left-[27%] top-[8%]"
+      >
+        <Sparkles
+          size={12}
+          fill="currentColor"
+          className="text-[#ffd166]"
+        />
+      </motion.div>
+
+      {/* Extra artwork sparkle */}
+      <motion.div
+        animate={{
+          y: [0, 5, 0],
+          rotate: [0, -12, 0],
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{
+          duration: 3.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.1,
+        }}
+        className="absolute right-[27%] bottom-[6%]"
+      >
+        <Sparkle
+          size={11}
+          color="#ffb300"
+          opacity={0.65}
+          variant="tiny-star"
+        />
+      </motion.div>
     </motion.div>
   );
 }
