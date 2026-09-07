@@ -52,7 +52,7 @@ function HeroArtwork() {
           width={512}
           height={512}
           priority
-          sizes="(max-width: 640px) 54vw, 32vw"
+          sizes="(max-width: 600px) 54vw, 32vw"
           className="absolute -bottom-[10%] -left-[12%] h-[112%] w-auto max-w-none object-contain object-bottom"
         />
         <div className="absolute right-[3%] top-1/2 flex w-[58%] -translate-y-1/2 items-center justify-center rounded-2xl bg-white/5 px-2 py-2 text-center sm:px-3 sm:py-3">
@@ -62,7 +62,7 @@ function HeroArtwork() {
             width={3600}
             height={1800}
             priority
-            sizes="(max-width: 640px) 26vw, 15vw"
+            sizes="(max-width: 600px) 26vw, 15vw"
             className="h-auto w-full max-w-[18rem] translate-x-2 object-contain lg:max-w-[20rem] lg:translate-x-5"
           />
         </div>
