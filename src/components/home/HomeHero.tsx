@@ -435,7 +435,7 @@ function HeroArtwork() {
         <div
           className="
             absolute
-            right-[6%]
+            right-[3%]
             top-1/2
             flex
             w-[55%]
