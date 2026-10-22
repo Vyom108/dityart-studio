@@ -8,7 +8,7 @@ A storefront for DityArt Studio, a creative business offering personalized gifts
 
 - Home, About, Products, Categories, Contact, FAQ, Privacy, Terms, and Custom Order pages.
 - Product catalog with category browsing and individual product pages.
-- Custom order form that submits to the app's order API.
+- Custom order form connected to the app's order API.
 - WhatsApp contact and ordering links.
 
 ## Built with
@@ -23,7 +23,7 @@ These are the technologies used in the project; they are not a statement of my i
 
 ## Order data
 
-The app's API exposes GET, POST, and PATCH operations for orders. The current implementation writes order data to `data/orders.json` on the server's local filesystem. This is suitable only for a local/demo setup: filesystem data may not persist across deployments, and the API currently has no authentication or administrative access controls. Do not use it to collect real customer information in a public deployment without replacing the storage and adding appropriate access controls.
+The app's order API currently writes data to `data/orders.json` on the server's local filesystem. This is a local/demo implementation; filesystem data may not persist across deployments. Replace the storage and add suitable access protections before using it to collect real customer information in a public production deployment.
 
 ## Run locally
 
